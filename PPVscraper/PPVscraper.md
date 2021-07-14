@@ -8,5 +8,9 @@ Python packages such as [Selenium](https://www.selenium.dev/documentation/en/) a
 
 ```ppv_full.csv``` - scraped directly from the JKJAV website and contains duplicate PPVs.
 
+```ppv-scraper.ipynb``` - Python script to performs web scraping.
+
+```ppv-cleaning.ipynb``` - Python script to perform data cleaning.
+
 ## Warning
 Coordinates of the PPVs are **NOT** 100% accurate as some of the PPV names couldn't be found on Google Maps, thus estimate coordinates are used.

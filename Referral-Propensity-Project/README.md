@@ -60,6 +60,7 @@ After having the list of customers, we brainstorm on the characteristics of thes
 We noticed that a hefty 35% of records do not have information on `age` and `gender` but we cannot afford to drop these rows therefore we have to impute them. 
 `Age` is imputed with the average age of the users from that preferred station. 
 Besides, we also introduced a new class for `gender` *Undefined* to replace records with missing gender information.
+
 After imputing `age` and `gender`, we drop the remaining records with missing values as it is only ~2% of the dataset. 
 Despite dropping those records, we still have a balanced dataset for classification.
 
@@ -136,3 +137,22 @@ We’re finally ready to fit the machine learning models. We’ll experiment wit
 |Extreme Gradient Boosting|0.69|0.69|0.69|~ 1 minute|
 |Categorical Gradient Boosting|0.71|0.70|0.70|~ 5 minutes|
 
+## Model Evaluation
+
+Categorical Gradient Boosting (CatBoost) seems like the best performing model with a reasonable model training time. 
+CatBoost also allows us to skip data pre-processing as there is no need to transform categorical features into numeric features (one-hot-encoding). 
+Thus, we will be able to use the dataset in its original format, which is simpler and more conducive for deployment.
+
+||Predicted:0|Predicted 1|
+|---|---|---|
+|Actual: 0|25,200 (65%)|13,393 (35%)|
+|Actual: 1|9,463 (24%)|29,167 (76%)|
+
+**Sensitivity**: 29,167 / (29,167 + 9,463) = 0.75 (75%)
+
+**Specificity**: 29,167 / (29,167 + 13,393) = 0.69 (69%)
+
+In conclusion, we are able to engage with 75% of customers who will make a referral but missing out 25% for sure. 
+Out of all the customers who are predicted to refer, 31% are incorrectly predicted to refer. 
+If the goal is to send out special incentives such as credits or loyalty points to encourage referral, 
+it’s fine even to engage with those who are unlikely to refer as it does not cause any negative problem.

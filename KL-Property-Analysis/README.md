@@ -1,4 +1,4 @@
-## Data Analysis - Kuala Lumpur Properties
+## Data Analysis - Kuala Lumpur Property Listings
 
 This project showcases:
 

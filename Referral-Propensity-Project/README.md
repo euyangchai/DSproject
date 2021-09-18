@@ -124,3 +124,15 @@ We’re finally ready to fit the machine learning models. We’ll experiment wit
 * Extreme Gradient Boosting (XGBoost)
 * Categorical Gradient Boosting (CatBoost)
 >  The CatBoost model is the only model that was trained using the non-pre-processed train dataset.
+
+## Model Performance
+
+|Model|Precision|Recall|f1-score|Training Time|
+|---|---|---|---|---|
+|Logistic Regression|0.66|0.66|0.66|~ 1 minute|
+|Support Vector Machines|0.69|0.69|0.69|~ 1 hour|
+|k-Nearest Neighbours|0.65|0.65|0.65|~ 1 second|
+|Naive Bayes|0.62|0.62|0.61|~ 1 second|
+|Extreme Gradient Boosting|0.69|0.69|0.69|~ 1 minute|
+|Categorical Gradient Boosting|0.71|0.70|0.70|~ 5 minutes|
+

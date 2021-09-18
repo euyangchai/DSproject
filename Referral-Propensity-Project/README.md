@@ -57,10 +57,10 @@ After having the list of customers, we brainstorm on the characteristics of thes
 
 #### Missing Values
 
-We noticed that a hefty 35% of records do not have information on age and gender but we cannot afford to drop these rows therefore we have to impute them. 
-Age is imputed with the average age of the users from that preferred station. 
-Besides, we also introduced a new class for gender *Undefined* to replace records with missing gender information.
-After imputing age and gender, we drop the remaining records with missing values as it is only ~2% of the dataset. 
+We noticed that a hefty 35% of records do not have information on `age` and `gender` but we cannot afford to drop these rows therefore we have to impute them. 
+`Age` is imputed with the average age of the users from that preferred station. 
+Besides, we also introduced a new class for `gender` *Undefined* to replace records with missing gender information.
+After imputing `age` and `gender`, we drop the remaining records with missing values as it is only ~2% of the dataset. 
 Despite dropping those records, we still have a balanced dataset for classification.
 
 #### Binning

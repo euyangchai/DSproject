@@ -54,3 +54,25 @@ After having the list of customers, we brainstorm on the characteristics of thes
 |`avg_topup_spent`|`total_topup_spent` / `topup_freq`|
 
 ## Exploratory Data Analysis (EDA)
+
+#### Missing Values
+
+We noticed that a hefty 35% of records do not have information on age and gender but we cannot afford to drop these rows therefore we have to impute them. 
+Age is imputed with the average age of the users from that preferred station. 
+Besides, we also introduced a new class for gender - “Undefined” to replace records with missing gender information.
+After imputing age and gender, we drop the remaining records with missing values as it is only ~2% of the dataset. 
+Despite dropping those records, we still have a balanced dataset for classification.
+
+#### Binning
+
+To prevent overfitting, we attempt to reduce the number of unique values for categorical features especially for `stationid`, `channel`, `vehicle_type`.
+
+Unfortunately, `stationid` consists of too many unique values thus we will be dropping the feature itself.
+
+> For future model improvement, we can try clustering the stations based on latitude and longitude.
+
+For `channel`, we will group channels with fairly similar operations. 
+We will also be combining the minority channels into one and name it *Others*. 
+The remaining channels will remain as standalone channels.
+
+For `vehicle_type`, we group luxury cars and regular cars as *cars*; premium bikes and regular bikes as *bikes*; pick-up trucks, light commercial vehicles, and heavy trucks are classified as *commercial vehicles*.

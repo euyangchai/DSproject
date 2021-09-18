@@ -47,10 +47,10 @@ After having the list of customers, we brainstorm on the characteristics of thes
 |Attribute|Derived from|
 |---|---|
 |`active`|`max_transaction_date_gmt8` - `min_transaction_date_gmt8`|
-|`avg_days_btw_purchases`|`active / fuel_purchase_freq`|
-|`avg_days_btw_topups`|`active / topup_freq`|
-|`avg_fuel_volume`|`total_fuel_volume / fuel_purchase_freq`|
-|`avg_fuel_spent`|`total_fuel_spent / fuel_purchase_freq`|
-|`avg_topup_spent`|`total_topup_spent / topup_freq`|
+|`avg_days_btw_purchases`|`active` / `fuel_purchase_freq`|
+|`avg_days_btw_topups`|`active` / `topup_freq`|
+|`avg_fuel_volume`|`total_fuel_volume` / `fuel_purchase_freq`|
+|`avg_fuel_spent`|`total_fuel_spent` / `fuel_purchase_freq`|
+|`avg_topup_spent`|`total_topup_spent` / `topup_freq`|
 
 ## Exploratory Data Analysis (EDA)

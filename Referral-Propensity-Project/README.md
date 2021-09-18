@@ -22,6 +22,8 @@ Each user will be assigned a probability score, making this a binary classificat
 
 ## Gathering Data
 
+#### Sample Of Users
+
 Firstly, we determine the userid(s) of the 2 groups of Setel customers
 
     1. Customers who have made at least one referral
@@ -29,6 +31,8 @@ Firstly, we determine the userid(s) of the 2 groups of Setel customers
 
 with the condition that these customers must have made at least 3 fuel or store purchases of any amount 
 because we want to avoid picking users who have just recently registered but haven’t gotten a chance to refer.
+
+#### User Attributes
 
 After having the list of customers, we brainstorm on the characteristics of these users that might affect whether they refer or not.
 
@@ -38,3 +42,15 @@ After having the list of customers, we brainstorm on the characteristics of thes
 |Transactional|First and latest transaction date, frequency of fuel purchase and top-up, ticket size ($) for fuel and top-up, fuel volume purchased, etc.|
 |Marketing|Acquisition channels|
 
+#### Feature Engineering
+
+|Attribute|Derived from|
+|---|---|
+|`active`|`max_transaction_date_gmt8 - min_transaction_date_gmt8`|
+|`avg_days_btw_purchases`|`active / fuel_purchase_freq`|
+|`avg_days_btw_topups`|`active / topup_freq`|
+|`avg_fuel_volume`|`total_fuel_volume / fuel_purchase_freq`|
+|`avg_fuel_spent`|`total_fuel_spent / fuel_purchase_freq`|
+|`avg_topup_spent`|`total_topup_spent / topup_freq`|
+
+## Exploratory Data Analysis (EDA)

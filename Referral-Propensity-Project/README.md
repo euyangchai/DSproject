@@ -96,3 +96,31 @@ This is the final dataset that we’ll be using for the training and testing of 
 |`avg_fuel_volume`|float|Average fuel volume per transaction|
 |`avg_fuel_spent`|float|Average RM spent on purchasing fuel|
 |`avg_topup_spent`|float|Average RM spent on top-up|
+
+
+## Data Splitting
+
+The dataset is to be divided into 2 subsets, with the first subset being used to fit the machine learning model (train dataset) and the second subset being used as input to the model 
+in which the predictions made are compared to the expected values (test dataset).
+
+For this project, we will use a split percentage of 70%-30% (70% train, 30% test). 
+This resulted in train and test datasets of sizes 180,185 and 77,223 respectively.
+
+## Data Preprocessing
+
+After obtaining our train dataset, we will transform both numerical features and categorical features from the train dataset to better fit some of the machine learning models.
+
+Numerical features will be standardized (rescaled to ensure mean and standard deviation to be 0 and 1 respectively) using Scikit-learn’s `StandardScaler()` function.
+
+Categorical features will be One-Hot Encoded which each category value is converted into a new column and assigned a 0 (false) or 1 (true) using Scikit-learn’s `OneHotEncoder()` function.
+
+## Model Fitting
+
+We’re finally ready to fit the machine learning models. We’ll experiment with multiple baseline machine learning algorithms below:
+* Logistic Regression
+* Support Vector Machines
+* k-Nearest Neighbours
+* Naive Bayes
+* Extreme Gradient Boosting (XGBoost)
+* Categorical Gradient Boosting (CatBoost)
+>  The CatBoost model is the only model that was trained using the non-pre-processed train dataset.

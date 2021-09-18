@@ -1,7 +1,8 @@
 
 # Referral Propensity Project
 
-DISCLAIMER: I worked on this project during my internship at Setel Ventures. The data used for this project are actual customers' data collected. To protect Setel customer's data, I will only provide a brief walkthrough on the project workflow. Results from analyses and visualizations are ommited.
+#### DISCLAIMER
+I worked on this project during my internship at Setel Ventures. The data used for this project are actual customers' data collected. To protect Setel customer's data, I will only provide a brief walkthrough on the project workflow. Results from analyses and visualizations are ommited.
 
 ## Introduction
 

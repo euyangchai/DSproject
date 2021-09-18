@@ -59,7 +59,7 @@ After having the list of customers, we brainstorm on the characteristics of thes
 
 We noticed that a hefty 35% of records do not have information on age and gender but we cannot afford to drop these rows therefore we have to impute them. 
 Age is imputed with the average age of the users from that preferred station. 
-Besides, we also introduced a new class for gender - “Undefined” to replace records with missing gender information.
+Besides, we also introduced a new class for gender *Undefined* to replace records with missing gender information.
 After imputing age and gender, we drop the remaining records with missing values as it is only ~2% of the dataset. 
 Despite dropping those records, we still have a balanced dataset for classification.
 
@@ -76,3 +76,23 @@ We will also be combining the minority channels into one and name it *Others*.
 The remaining channels will remain as standalone channels.
 
 For `vehicle_type`, we group luxury cars and regular cars as *cars*; premium bikes and regular bikes as *bikes*; pick-up trucks, light commercial vehicles, and heavy trucks are classified as *commercial vehicles*.
+
+## Description Of Features
+
+This is the final dataset that we’ll be using for the training and testing of machine learning models.
+
+|Feature|Data Type|Description|
+|---|---|---|
+|`refer`|integer|Binary indication of whether the user has ever referred|
+|`age`|float|User’s age|
+|`gender`|object|User’s gender|
+|`tenure`|integer|Number of days elapsed since registration date|
+|`channel`|object|Acquisition channel attributed to the user|
+|`state`|object|State that the user lives in (mode)|
+|`fuel_grade`|object|User’s preferred fuel grade (mode)|
+|`vehicle_type`|object|User’s predicted vehicle type (mode)|
+|`paymentmethod`|object|User’s preferred payment method (mode)|
+|`avg_days_btw_purchases`|float|Average number of days between purchases|
+|`avg_fuel_volume`|float|Average fuel volume per transaction|
+|`avg_fuel_spent`|float|Average RM spent on purchasing fuel|
+|`avg_topup_spent`|float|Average RM spent on top-up|
